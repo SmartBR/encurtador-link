@@ -12,7 +12,7 @@ router.get("/:code", async (req, res) => {
     if (shortener) {
         console.log("link", shortener)
         res.redirect(shortener.link)
-    }
+    }else res.redirect("/")
 })
 
 
