@@ -1,9 +1,12 @@
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
-const config = require("../resource/config.json")
 
+const config = require("../resource/config.json")
 const path = require("path")
+
+const https = require("https")
+const http = require("http")
 
 require("./database/mongodb")
 
@@ -19,4 +22,19 @@ app.use("/success", require("./routes/success"))
 app.use("/info", require("./routes/info"))
 app.get("*", (req, res) => res.redirect("/"))
 
-app.listen(config.port, () => console.log("Aplicação online!"))
+const httpServer = http.createServer(app)
+const httpsServer = https.createServer(app, {
+    key: "/etc/ssl/key.pem",
+    cert: "/etc/ssl/cert.pem"
+})
+
+httpServer.listen(8080, () => {
+    console.log("HTTP server listening on port 8080")
+})
+
+httpsServer.listen(80, () => {
+    console.log("HTTPS server listening on port 80")
+})
+
+
+//app.listen(config.port, () => console.log("Aplicação online!"))
