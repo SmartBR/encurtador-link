@@ -24,10 +24,10 @@ app.use("/info", require("./routes/info"))
 app.get("*", (req, res) => res.redirect("/"))
 
 const httpServer = http.createServer(app)
-const httpsServer = https.createServer(app, {
-    key: fs.readFileSync("/etc/ssl/key.pem"),
-    cert: fs.readFileSync("/etc/ssl/cert.pem")
-})
+const httpsServer = https.createServer({
+    key: fs.readFileSync("/etc/ssl/key.pem", "utf8"),
+    cert: fs.readFileSync("/etc/ssl/cert.pem", "utf8")
+}, app)
 
 httpServer.listen(8080, () => {
     console.log("HTTP server listening on port 8080")
