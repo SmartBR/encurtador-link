@@ -8,12 +8,12 @@ block body
     .card.text-center.mx-auto(style="margin-top: 250px; width: 40rem;")
         .card-body
             h3.card-title Encurtador de Links
-            p.card-text(style="white-space: pre;")
-                | Data da criação: <code>#{dateFormat}</code>
-                | Código: <code>#{code}</code>
-                | Link original:&nbsp;
-                a(href=`${link}` target="_blank") #{link} <br>
+            p.card-text
+                | Data da criação: <code>#{dateFormat}</code> <br>
+                | Link original: <code>#{link}</code> <br>
                 | Link encurtado:&nbsp;
-                a(href=`${url}` target="_blank") #{url}
+                a(href=`${shortLink}` target="_blank") #{shortLink}
             a#copyButton.btn.btn-primary(aria-label=`${url}`) Copiar
             a.btn.btn-primary(href="/") Voltar
+        .card-footer
+            p.text-muted Código: #{code}

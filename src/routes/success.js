@@ -24,7 +24,7 @@ router.get("/:code", async (req, res) => {
 
         res.render("success", {
             url: `${config.domain}/${code}`,
-            link: shortener.link,
+            shortLink: shortener.link,
         })
     }else res.redirect("/")
 })

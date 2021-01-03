@@ -16,7 +16,7 @@ router.get("/:code", async (req, res) => {
         res.render("info", {
             dateFormat: `${hour}:${minute} ${day}/${month}/${year}`,
             link: shortener.link,
-            url: `${config.domain}/${code}`,
+            shortLink: `${config.domain}/${code}`,
             code
         })
     }
