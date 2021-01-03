@@ -17,5 +17,6 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use("/", require("./routes/index"))
 app.use("/success", require("./routes/success"))
 app.use("/info", require("./routes/info"))
+app.get("*", (req, res) => res.redirect("/"))
 
 app.listen(config.port, () => console.log("Aplicação online!"))
