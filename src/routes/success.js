@@ -23,8 +23,8 @@ router.get("/:code", async (req, res) => {
         console.log("updated!")
 
         res.render("success", {
-            url: `${config.domain}/${code}`,
-            shortLink: shortener.link,
+            shortLink: `${config.domain}/${code}`,
+            link: shortener.link,
         })
     }else res.redirect("/")
 })
