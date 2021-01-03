@@ -1,0 +1,13 @@
+extends ./layout/layout
+
+block head
+    title Encurtador de Link
+    script(src="/jquery/clipboard.js")
+
+block body
+    .card.text-center.mx-auto(style="margin-top: 250px; width: 40rem;")
+        .card-body
+            h3.card-title Encurtador de Links
+            p.card-text Um novo link encurtado foi gerado para <code>#{link}</code>.
+            a#copyButton.btn.btn-primary(aria-label=`${url}`) Copiar
+            a.btn.btn-primary(href="/") Voltar

@@ -1,0 +1,19 @@
+extends ./layout/layout
+
+block head
+    title Encurtador de Link
+    script(src="/jquery/clipboard.js")
+
+block body
+    .card.text-center.mx-auto(style="margin-top: 250px; width: 40rem;")
+        .card-body
+            h3.card-title Encurtador de Links
+            p.card-text(style="white-space: pre;")
+                | Data da criação: <code>#{dateFormat}</code>
+                | Código: <code>#{code}</code>
+                | Link original:
+                a(href=`${link}` target="_blank") #{link} <br>
+                | Link encurtado:
+                a(href=`${url}` target="_blank") #{url}
+            a#copyButton.btn.btn-primary(aria-label=`${url}`) Copiar
+            a.btn.btn-primary(href="/") Voltar

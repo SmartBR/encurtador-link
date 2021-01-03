@@ -1,0 +1,8 @@
+input {
+    width: 30rem;
+    color: #064f72;
+}
+
+input::placeholder {
+    color: #514848;
+}
