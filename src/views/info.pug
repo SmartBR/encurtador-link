@@ -11,9 +11,9 @@ block body
             p.card-text(style="white-space: pre;")
                 | Data da criação: <code>#{dateFormat}</code>
                 | Código: <code>#{code}</code>
-                | Link original:
+                | Link original:&nbsp;
                 a(href=`${link}` target="_blank") #{link} <br>
-                | Link encurtado:
+                | Link encurtado:&nbsp;
                 a(href=`${url}` target="_blank") #{url}
             a#copyButton.btn.btn-primary(aria-label=`${url}`) Copiar
             a.btn.btn-primary(href="/") Voltar
