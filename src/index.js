@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require("body-parser")
 
 const config = require("../resource/config.json")
+const fs = require("fs")
 const path = require("path")
 
 const https = require("https")
