@@ -24,8 +24,8 @@ app.get("*", (req, res) => res.redirect("/"))
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(app, {
-    key: "/etc/ssl/key.pem",
-    cert: "/etc/ssl/cert.pem"
+    key: fs.readFileSync("/etc/ssl/key.pem"),
+    cert: fs.readFileSync("/etc/ssl/cert.pem")
 })
 
 httpServer.listen(8080, () => {
