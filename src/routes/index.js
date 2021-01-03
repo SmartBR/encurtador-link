@@ -9,10 +9,7 @@ router.get("/:code", async (req, res) => {
     const code = req.params.code
     const shortener = await Link.findOne({code}).exec()
 
-    if (shortener) {
-        console.log("link", shortener)
-        res.redirect(shortener.link)
-    }else res.redirect("/")
+    res.redirect(shortener ? shortener.link : "/")
 })
 
 

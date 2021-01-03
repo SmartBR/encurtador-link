@@ -8,7 +8,7 @@ router.post("/", (req, res) => {
         const linkParam = req.body.link
         const code = randomNumber(8)
 
-        console.log(`generating... ${code}`)
+        console.log(`Novo código gerado! ${code}`)
         new Link({ code: code, link: linkParam, createdAt: Date.now() }).save().then(() => {
             res.redirect(`/success/${code}`)
         })
@@ -20,8 +20,6 @@ router.get("/:code", async (req, res) => {
     const shortener = await Link.findOne({code}).exec()
 
     if (shortener) {
-        console.log("updated!")
-
         res.render("success", {
             shortLink: `${config.domain}/${code}`,
             link: shortener.link,
