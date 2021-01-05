@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const Link = require("../database/model/Link")
 const config = require("../../resource/config.json")
-const randomNumber = require("../number/random-number")
+const randomNumber = require("../letter/random-letter")
 
 router.post("/", (req, res) => {
     if (req.body && req.body.link) {
