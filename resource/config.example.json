@@ -1,0 +1,5 @@
+{
+  "domain": "http://localhost",
+  "port": "80",
+  "mongo_uri": "your_mongo_uri"
+}
