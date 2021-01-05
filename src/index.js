@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-const https = require("https")
 const bodyParser = require("body-parser")
 
 const config = require("../resource/config.json")
@@ -20,9 +19,4 @@ app.use("/success", require("./routes/success"))
 app.use("/info", require("./routes/info"))
 app.get("*", (req, res) => res.redirect("/"))
 
-const server = https.createServer(app)
-server.listen(config.port, () => {
-    console.log(`Aplicação online na porta ${config.port}`)
-})
-
-//app.listen(config.port, () => console.log("Aplicação online!"))
+app.listen(config.port, () => console.log(`Aplicação online na porta ${config.port}`))
