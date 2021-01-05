@@ -1,7 +1,7 @@
 ![dashboard-img](https://media.discordapp.net/attachments/796017211282161694/796036184849514496/unknown.png?width=891&height=434)
 
 # encurtador-link
-Encurtador de link, simples e prático de usar. Basta informar uma URI de conexão do [mongodb](http://mongodb.com)
+Encurtador de link, simples e prático de usar. Basta informar uma URI de conexão do [mongodb](http://mongodb.com).
 
 # Inicialização
 - Clone o repositório utilizando o [Git](https://git-scm.com/downloads)
