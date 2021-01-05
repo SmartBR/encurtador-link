@@ -2,8 +2,6 @@ $(document).ready(() => {
     const copyButton = $("#copyButton")
 
     copyButton.on("click", () => {
-        console.log("foi!")
-
         const copyValue = copyButton.attr("aria-label")
         const temp = $("<input>")
 
